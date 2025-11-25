@@ -1,5 +1,39 @@
-import 'package:api_project/api_project.dart' as api_project;
+import 'package:api_project/person.dart';
+import 'dart:io';
 
 void main(List<String> arguments) {
-  print('Hello world: ${api_project.calculate()}!');
+  // Create a Person instance
+  var person = Person('Momo', 25, 'male', address: '123 Main St', phoneNumber: '555-1234');
+  person.firstName = 'John';
+  person.lastName = 'Doe';
+  //print(person.getFullName());
+
+  while (true) {
+    print('Choose an option:');
+    print('1. Get Full Name');
+    print('2. Get Username');
+    print('3. Get Info');
+    print('4. Exit');
+    var choice = stdin.readLineSync();
+    handleChoice(choice, person);
+  }
+}
+
+void handleChoice(String? choice, Person person) {
+  switch (choice) {
+    case '1':
+      print('Your Full Name : ${person.getFullName()}');
+      break;
+    case '2':
+      print('Your Username : ${person.getUsername()}');
+      break;
+    case '3':
+      print(person.getInfo());
+      break;
+    case '4':
+    case 'exit':
+      exit(0);
+    default:
+      print('Invalid option');
+  }
 }
