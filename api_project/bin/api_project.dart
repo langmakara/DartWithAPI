@@ -4,8 +4,8 @@ import 'dart:io';
 void main(List<String> arguments) {
   // Create a Person instance
   var person = Person('Momo', 25, 'male', address: '123 Main St', phoneNumber: '555-1234');
-  person.firstName = 'John';
-  person.lastName = 'Doe';
+  person.firstName = 'Makara';
+  person.lastName = 'Lang';
   //print(person.getFullName());
 
   while (true) {
